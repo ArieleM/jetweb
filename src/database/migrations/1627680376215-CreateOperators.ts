@@ -10,6 +10,8 @@ export class CreateOperators1627680376215 implements MigrationInterface {
             name: "id",
             type: "int",
             isPrimary: true,
+            generationStrategy: "increment",
+            isGenerated: true,
           },
           {
             name: "name",
