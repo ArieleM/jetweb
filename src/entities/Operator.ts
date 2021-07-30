@@ -9,7 +9,7 @@ import {
 @Entity("operators")
 class Operator {
   @PrimaryGeneratedColumn()
-  id: number;
+  readonly id: number;
 
   @Column()
   name: string;
