@@ -10,7 +10,7 @@ class CreateOperatorController {
       name,
     });
 
-    return response.json(operator);
+    return response.status(201).json(operator);
   }
 }
 

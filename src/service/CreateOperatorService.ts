@@ -5,7 +5,7 @@ class CreateOperatorService {
     const operatorRepository = getCustomRepository(OperatorRepositories);
 
     if (!name) {
-      throw new Error("Name incorrect.");
+      throw new Error("Digite um nome.");
     }
 
     const operatorAlreadyExists = await operatorRepository.findOne({
@@ -13,7 +13,7 @@ class CreateOperatorService {
     });
 
     if (operatorAlreadyExists) {
-      throw new Error("Operator already exists.");
+      throw new Error("Operador já cadastrado.");
     }
 
     const operator = operatorRepository.create({
