@@ -4,7 +4,9 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from "typeorm";
+import { Client } from "./Client";
 
 @Entity("operators")
 class Operator {
@@ -13,6 +15,9 @@ class Operator {
 
   @Column()
   name: string;
+
+  @OneToMany((type) => Client, (client) => client.operator, { eager: true })
+  clients: Client[];
 
   @CreateDateColumn()
   created_at: Date;
